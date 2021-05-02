@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>
+  Toxic report
+</title>
+</head>
+<body>
+<script src="hello.js"></script>
+<h3>Started the testing</h3>
+<hr>
+<div class="message error">Hey! Here's an error &#10060;</div>
+<p><button class="show-error" onclick="hideAndShow('stacktrace')">See stacktrace</button>
+<button class="show-image" onclick="hideAndShow('screenshot')">See screenshot</button></p>
+<div id="stacktrace" class ="message" style="display: none">
+  <p>Here will be a stacktrace for an error</p>
+</div>
+<div id="screenshot" style="display: none">
+  <p><img src="cover1.jpeg"></p>
+</div>
+<p>blabla blabla</p>
+</body>
+</html>

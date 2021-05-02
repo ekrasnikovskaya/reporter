@@ -1,0 +1,42 @@
+button {
+    background-color: #33b1eb; 
+    border-radius: 8px;
+    color: #1a5c7a;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    
+  } 
+.show-image {
+background-color: #d1eefc;
+border: 2px solid #7ab2cc;
+}
+.show-error {
+background-color: #ade6ad;
+border: 2px solid #62b15b
+}
+.show-image:hover {
+  background-color: #7ab2cc;
+  color: rgb(11, 33, 66);;
+}
+.show-error:hover {
+background-color: #62b15b;
+color: rgb(11, 33, 66);;
+}
+img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.message {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.message.error {
+  color: #ac2121;
+}
