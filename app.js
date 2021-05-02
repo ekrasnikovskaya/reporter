@@ -16,7 +16,7 @@ class Report {
 
         return [date, time];
     }
-    // writes new file 
+    // appends file with new lines
     addToFile(lines) {
         fs.appendFile(
             this.file, lines,
@@ -28,6 +28,7 @@ class Report {
             },
           );
     }
+    // writes new file 
     startTheReport(title, script, css) {
         this.addToFile(`<!DOCTYPE html>\n
         <html>\n
@@ -52,23 +53,26 @@ class Report {
             this.addToFile(
             `<button class="show-image" onclick="hideAndShow('screenshot')">See screenshot</button></p>`);
         }
-        this.addToFile(`<div id="stacktrace" class ="message" style="display: none">
-        <p>Here will be a stacktrace for an error</p>
-        </div>`);
-        if (image ==! undefined) {
-            this.addToFile(`<div id="screenshot" style="display: none">
-            <p><img src="${image}"></p>
-          </div>`)
+        this.addToFile(
+            `<div id="stacktrace" class ="message" style="display: none">
+            <p>${stacktrace}</p>
+            </div>`);
+        if (image !== undefined) {
+            this.addToFile(
+                `<div id="screenshot" style="display: none">
+                 <p><img src="${image}"></p>
+                 </div>`)
         }
     }
+     // adds just a line
     addMessage(message) {
-        // adds just a line
     }
+     // says that test passed
     addSuccess(message) {
-        // says that test passed
     }
+    // just adds ending
     addEnding() {
-        // just adds ending
+        this.addToFile('\n</body>\n</html>');
     }
 }
 
