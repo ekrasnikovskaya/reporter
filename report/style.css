@@ -13,18 +13,20 @@ button {
 .show-image {
 background-color: #d1eefc;
 border: 2px solid #7ab2cc;
+color: #5d9cb9;
 }
 .show-error {
 background-color: #ade6ad;
-border: 2px solid #62b15b
+border: 2px solid #62b15b;
+color: #4f9948;
 }
 .show-image:hover {
   background-color: #7ab2cc;
-  color: rgb(11, 33, 66);;
+  color: rgb(17, 51, 83);
 }
 .show-error:hover {
 background-color: #62b15b;
-color: rgb(11, 33, 66);;
+color: rgb(17, 51, 83);
 }
 img {
   max-width: 70%;
@@ -33,10 +35,14 @@ img {
 }
 h3 {
   font-family: Arial, Helvetica, sans-serif;
+  color: #5d9cb9;
 }
 .message {
   font-family: Arial, Helvetica, sans-serif;
 }
 .message.error {
   color: #ac2121;
+}
+.message.success {
+  color: #4f9948;
 }
