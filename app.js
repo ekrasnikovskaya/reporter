@@ -82,6 +82,10 @@ class Report {
         this.addToFile(`\n<div class="message success">${this.getTime()[1]} 
         ${message} &#9989;</div>`)
     }
+    // add a line with no coloring
+    addMessage(message) {
+        this.addToFile(`\n<div class="message">${this.getTime()[1]} ${message}</div>`)
+    }
     // just adds ending
     addEnding() {
         this.addToFile('\n</body>\n</html>');
