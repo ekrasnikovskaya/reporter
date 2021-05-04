@@ -5,8 +5,9 @@ What I do?
 - generate an HTML file, which contains of success or error messages. You can see an example if you copy the report folder to your computer and open 'report.html' in your browser
 
 How to use me?
-1) install the latest version of Toxic reporter bu npm:
-\n$ npm install toxic-reporter
+1) install the latest version of Toxic reporter by npm in you console:
+
+$ npm install toxic-reporter
 2) import class Report in your script like
 const { Report } = require('./app');
 3) Make a new report folder for your tests and name the report file:
