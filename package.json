@@ -1,3 +1,22 @@
 {
-  "dependencies": {}
+  "dependencies": {},
+  "name": "toxic-reporter",
+  "description": "Hello! I'm just a silly little module, which will help people and QA's to make more colorful html report after running all the tests.",
+  "version": "1.0.1",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekrasnikovskaya/toxic-reporter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekrasnikovskaya/toxic-reporter/issues"
+  },
+  "homepage": "https://github.com/ekrasnikovskaya/toxic-reporter#readme"
 }

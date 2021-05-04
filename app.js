@@ -1,8 +1,9 @@
 const fs = require('fs');
 
 class Report {
-    constructor(file) {
-        this.file = `report/${file}`;
+    constructor(directory, file) {
+        this.directory = directory;
+        this.file = `${directory}/${file}`;
     }
     getTime() {
         const ts = Date.now();
@@ -38,6 +39,31 @@ class Report {
     }
     // writes new file 
     startTheReport(title, script, css) {
+        if (!fs.existsSync(this.directory)){
+            fs.mkdirSync(this.directory);
+            fs.rename('./node_modules/toxic-report/style.css', `${this.directory}/style.css`, function (err) {
+                if (err) {
+                    if (err.code === 'EXDEV') {
+                        copy();
+                    } else {
+                        callback(err);
+                    }
+                    return;
+                }
+                callback();
+            });
+            fs.rename('./node_modules/toxic-report/button.js', `${this.directory}/button.js`, function (err) {
+                if (err) {
+                    if (err.code === 'EXDEV') {
+                        copy();
+                    } else {
+                        callback(err);
+                    }
+                    return;
+                }
+                callback();
+            });
+        }
         if (fs.existsSync(this.file)) {
             fs.unlinkSync(this.file); // remove previous file
         }     
