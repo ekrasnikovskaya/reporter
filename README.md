@@ -6,7 +6,7 @@ What I do?
 
 How to use me?
 1) install the latest version of Toxic reporter bu npm:
-$ npm install toxic-reporter
+\n$ npm install toxic-reporter
 2) import class Report in your script like
 const { Report } = require('./app');
 3) Make a new report folder for your tests and name the report file:
