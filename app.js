@@ -41,26 +41,8 @@ class Report {
     startTheReport(title) {
         if (!fs.existsSync(this.directory)){
             fs.mkdirSync(this.directory);
-            fs.rename('./node_modules/toxic-reporter/style.css', `${this.directory}/style.css`, function (err) {
-                if (err) {
-                    if (err.code === 'EXDEV') {
-                        copy();
-                    } else {
-                        console.log(err);
-                    }
-                    return;
-                }
-            });
-            fs.rename('./node_modules/toxic-reporter/button.js', `${this.directory}/button.js`, function (err) {
-                if (err) {
-                    if (err.code === 'EXDEV') {
-                        copy();
-                    } else {
-                        console.log(err);
-                    }
-                    return;
-                }
-            });
+            fs.copyFileSync('./node_modules/toxic-reporter/style.css', `${this.directory}/style.css`);
+            fs.copyFileSync('./node_modules/toxic-reporter/button.js', `${this.directory}/button.js`);
         }
         if (fs.existsSync(this.file)) {
             fs.unlinkSync(this.file); // remove previous file
@@ -74,8 +56,8 @@ class Report {
         </title>\n
         </head>\n
         <body>\n
-        <script src="${this.directory}/button.js"></script>
-        <link rel="stylesheet" href="${this.directory}/style.css">
+        <script src="button.js"></script>
+        <link rel="stylesheet" href="style.css">
         <p><h3>Started the testing</h3></p>\n
         <p><h3>${this.getTime()[0]}</h3></p><hr>`);
     }
