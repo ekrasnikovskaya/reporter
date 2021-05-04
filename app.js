@@ -38,30 +38,28 @@ class Report {
           );
     }
     // writes new file 
-    startTheReport(title, script, css) {
+    startTheReport(title) {
         if (!fs.existsSync(this.directory)){
             fs.mkdirSync(this.directory);
-            fs.rename('./node_modules/toxic-report/style.css', `${this.directory}/style.css`, function (err) {
+            fs.rename('./node_modules/toxic-reporter/style.css', `${this.directory}/style.css`, function (err) {
                 if (err) {
                     if (err.code === 'EXDEV') {
                         copy();
                     } else {
-                        callback(err);
+                        console.log(err);
                     }
                     return;
                 }
-                callback();
             });
-            fs.rename('./node_modules/toxic-report/button.js', `${this.directory}/button.js`, function (err) {
+            fs.rename('./node_modules/toxic-reporter/button.js', `${this.directory}/button.js`, function (err) {
                 if (err) {
                     if (err.code === 'EXDEV') {
                         copy();
                     } else {
-                        callback(err);
+                        console.log(err);
                     }
                     return;
                 }
-                callback();
             });
         }
         if (fs.existsSync(this.file)) {
@@ -76,8 +74,8 @@ class Report {
         </title>\n
         </head>\n
         <body>\n
-        <script src="${script}"></script>
-        <link rel="stylesheet" href="${css}">
+        <script src="${this.directory}/button.js"></script>
+        <link rel="stylesheet" href="${this.directory}/style.css">
         <p><h3>Started the testing</h3></p>\n
         <p><h3>${this.getTime()[0]}</h3></p><hr>`);
     }

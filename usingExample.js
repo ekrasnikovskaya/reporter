@@ -1,8 +1,8 @@
 const { Report } = require('./app');
 
-const report = new Report('report.html')
+const report = new Report('reportfolder', 'report.html')
 
-report.startTheReport('This is a report example', 'button.js', 'style.css');
+report.startTheReport('This is a report example');
 report.addSuccess('Lets pretend it all works');
 report.addSuccess('And add another success message');
 report.addMessage('This is just a message without any coloring');
