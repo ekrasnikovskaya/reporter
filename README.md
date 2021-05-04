@@ -5,4 +5,4 @@ What I do?
 - generate an HTML file, which contains of success or error messages. You can see an example if you copy the report folder to your computer and open 'report.html' in your browser
 
 How to use me?
-- see an example of usage in 'useExample.js' with command 'node useExample.js'. 
+- see an example of usage in 'usingExample.js' with command 'node usingExample.js'. 

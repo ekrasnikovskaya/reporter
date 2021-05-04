@@ -1,4 +1,5 @@
 node_modules
 package-lock.json
+report.html
 report/report.html
 report/toxic-report.html

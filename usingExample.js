@@ -1,10 +1,11 @@
-const {Report} = require('./app');
+const { Report } = require('./app');
 
-const report = new Report('./report/toxic-report.html')
+const report = new Report('report.html')
 
-report.startTheReport('Toxic', 'button.js', 'style.css');
+report.startTheReport('This is a report example', 'button.js', 'style.css');
 report.addSuccess('Lets pretend it all works');
 report.addSuccess('And add another success message');
+report.addMessage('This is just a message without any coloring');
 report.addError('Oops! Something imaginary failed', 'blabla stacktrace', 'cover1.jpeg');
 report.addSuccess('God I hope this works');
 report.addEnding();

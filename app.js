@@ -2,7 +2,7 @@ const fs = require('fs');
 
 class Report {
     constructor(file) {
-        this.file = file;
+        this.file = `report/${file}`;
     }
     getTime() {
         const ts = Date.now();
@@ -38,7 +38,10 @@ class Report {
     }
     // writes new file 
     startTheReport(title, script, css) {
-        fs.unlinkSync(this.file); // remove previous file
+        if (fs.existsSync(this.file)) {
+            fs.unlinkSync(this.file); // remove previous file
+        }     
+        if (this.file)
         this.addToFile(`<!DOCTYPE html>\n
         <html>\n
         <head>\n
@@ -79,12 +82,13 @@ class Report {
     }
      // says that test passed
     addSuccess(message) {
-        this.addToFile(`\n<div class="message success">${this.getTime()[1]} 
-        ${message} &#9989;</div>`)
+        this.addToFile(`\n<p><div class="message success">${this.getTime()[1]} 
+        ${message} &#9989;</div></p>`)
     }
     // add a line with no coloring
     addMessage(message) {
-        this.addToFile(`\n<div class="message">${this.getTime()[1]} ${message}</div>`)
+        this.addToFile(`\n<p><div class="message">${this.getTime()[1]} 
+        ${message}</div></p>`)
     }
     // just adds ending
     addEnding() {
