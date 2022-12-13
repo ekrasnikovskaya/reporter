@@ -40,9 +40,7 @@ class Report {
     // writes new file 
     startTheReport(title) {
         if (!fs.existsSync(this.directory)){
-            fs.mkdirSync(this.directory);
-            fs.copyFileSync('./node_modules/toxic-reporter/style.css', `${this.directory}/style.css`);
-            fs.copyFileSync('./node_modules/toxic-reporter/button.js', `${this.directory}/button.js`);
+            fs.mkdirSync(this.directory); // remove previous folder
         }
         if (fs.existsSync(this.file)) {
             fs.unlinkSync(this.file); // remove previous file
