@@ -54,9 +54,68 @@ class Report {
         <title>
         ${title}
         </title>\n
+        <script>
+        function hideAndShow(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+        </script>
+        <style>
+        button {
+            background-color: #33b1eb; 
+            border-radius: 8px;
+            color: #1a5c7a;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            
+          } 
+        .show-image {
+        background-color: #d1eefc;
+        border: 2px solid #7ab2cc;
+        color: #5d9cb9;
+        }
+        .show-error {
+        background-color: #ade6ad;
+        border: 2px solid #62b15b;
+        color: #4f9948;
+        }
+        .show-image:hover {
+          background-color: #7ab2cc;
+          color: rgb(17, 51, 83);
+        }
+        .show-error:hover {
+        background-color: #62b15b;
+        color: rgb(17, 51, 83);
+        }
+        img {
+          max-width: 70%;
+          height: auto;
+          border-radius: 8px;
+        }
+        h3 {
+          font-family: Arial, Helvetica, sans-serif;
+          color: #5d9cb9;
+        }
+        .message {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .message.error {
+          color: #ac2121;
+        }
+        .message.success {
+          color: #4f9948;
+        }
+        </style>
         </head>\n
         <body>\n
-        <script src="button.js"></script>
         <link rel="stylesheet" href="style.css">
         <p><h3>Started the testing</h3></p>\n
         <p><h3>${this.getTime()[0]}</h3></p><hr>`);
