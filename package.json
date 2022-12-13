@@ -2,7 +2,7 @@
   "dependencies": {},
   "name": "toxic-reporter",
   "description": "Hello! I'm just a silly little module, which will help people and QA's to make more colorful html report after running all the tests.",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "app.js",
   "devDependencies": {},
   "scripts": {
